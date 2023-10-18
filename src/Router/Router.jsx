@@ -5,6 +5,8 @@ import AddProduct from '../Pages/AddProduct';
 import MyCart from '../Pages/MyCart';
 import Login from '../Pages/Login';
 import SignUp from '../Pages/SignUp';
+import ProductCard from '../Pages/ProductCard';
+import ProductDetails from '../Pages/ProductDetails';
 
 const Router = createBrowserRouter([
     {
@@ -14,6 +16,7 @@ const Router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+
             },
             {
                 path: "/addProduct",
@@ -21,8 +24,19 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/myCart",
-                element: <MyCart></MyCart>
+                element: <MyCart></MyCart>,
+                loader: ()=>fetch('http://localhost:5000/mycart')
             },
+            {
+                path: '/category/:brandName',
+                element: <ProductCard></ProductCard>,
+                loader: () => fetch('http://localhost:5000/products')
+            },
+            {
+                path: '/product/:_id',
+                element: <ProductDetails></ProductDetails>,
+                loader: () => fetch('http://localhost:5000/products')
+            }
 
         ]
     },
