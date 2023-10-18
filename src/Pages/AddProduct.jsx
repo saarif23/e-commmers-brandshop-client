@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2'
+import Navbar from "../Header/Navbar";
 
 const AddProduct = () => {
+
     const handleFromSubmit = event => {
         event.preventDefault();
         const from = event.target;
@@ -13,9 +16,31 @@ const AddProduct = () => {
         const details = from.details.value;
         const newProduct = { name, brandName, type, price, rating, image, details };
         console.log(newProduct);
+
+        // new product send to the server 
+        fetch('http://localhost:5000/products', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newProduct)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'New Product Added Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                })
+                from.reset();
+            })
+
     }
     return (
         <div>
+            <Navbar></Navbar>
             <div className=" text-center min-h-screen bg-cover bg-center pb-16 " style={{ backgroundImage: 'url("https://i.ibb.co/YhwJcHf/11.png")' }}>
 
                 <Link to="/"><button className="p-5">Back To Home</button></Link>

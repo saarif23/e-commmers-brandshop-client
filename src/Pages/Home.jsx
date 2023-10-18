@@ -1,9 +1,13 @@
+import Categories from "../Components/Categories";
+import Header from "../Header/Header";
 
 const Home = () => {
     return (
-        <div className="min-h-screen">
-            <p>home</p>
-        </div>
+        <>
+            <Header></Header>
+            <Categories></Categories>
+        </>
+
     );
 };
 
