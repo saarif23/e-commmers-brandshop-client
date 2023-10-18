@@ -21,7 +21,7 @@ const Product = ({ product }) => {
                         </p>
                     </Link>
 
-                    <Link to={`/updateCoffee/${_id}`}>
+                    <Link to={`/updateProduct/${_id}`}>
                         <p className='bg-[#3C393B] p-2 my-2  rounded-md'><FaPen></FaPen></p>
                     </Link>
                     <p
