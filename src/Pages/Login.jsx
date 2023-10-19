@@ -1,14 +1,18 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import Swal from "sweetalert2";
+import Navbar from "../Header/Navbar";
 
 const Login = () => {
     const { signIn, googleSignIn } = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location)
+
 
     //login with google
     const handleGoogleSignIn = () => {
@@ -20,7 +24,7 @@ const Login = () => {
                     text: 'Sign In Successfully',
                     icon: "success",
                 });
-                navigate("/")
+                navigate(location?.state ? location.state : "/")
             })
             .catch(error => {
                 console.error(error)
@@ -42,7 +46,7 @@ const Login = () => {
                     text: 'Sign In Successfully',
                     icon: "success",
                 });
-                navigate("/")
+                navigate(location?.state ? location.state : "/")
             })
             .catch(error => {
                 console.error(error)
@@ -50,6 +54,7 @@ const Login = () => {
     }
     return (
         <>
+            <Navbar></Navbar>
             <div className="px-8 py-3 rounded-md m-10 border w-1/3 mx-auto">
                 <h3 className="text-3xl py-3 font-semibold">Sign In </h3>
                 <form onSubmit={handleLoginSubmit}>

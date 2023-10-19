@@ -31,7 +31,7 @@ const ChooseItem = ({ item }) => {
                     </div>
                     <div className='flex gap-2 items-center'>
 
-                        <p>Salary : {price}</p>
+                        <p>Price : {price}</p>
                     </div>
                 </div>
             </div>
