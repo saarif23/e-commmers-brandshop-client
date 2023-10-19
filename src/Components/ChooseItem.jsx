@@ -1,8 +1,19 @@
 
-
 const ChooseItem = ({ item }) => {
-    console.log(item)
-    const {  name, brandName, type, price, rating, image } = item;
+
+    const { _id, name, brandName, type, price, rating, image } = item;
+
+    const handleDeleteToMyCart = id => {
+        console.log(id)
+        fetch(`http://localhost:5000/mycart/${id}`, {
+            method: "DELETE"
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+    }
+
     return (
         <div className='flex gap-20 max-w-4xl mx-auto border rounded-lg  my-5 items-center p-5'>
             <img className='w-36' src={image} alt="" />
@@ -25,7 +36,7 @@ const ChooseItem = ({ item }) => {
                 </div>
             </div>
             <div>
-                <button className="btn btn-primary">View Details</button>
+                <button onClick={() => handleDeleteToMyCart(_id)} className="btn btn-primary">Delete From Cart</button>
             </div>
         </div>
     );

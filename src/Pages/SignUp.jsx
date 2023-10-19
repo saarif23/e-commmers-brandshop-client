@@ -1,14 +1,48 @@
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
+import { useContext, useState } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
 const SignUp = () => {
+    const [showPassword, setShowPassword] = useState(false);
+    const { signUp } = useContext(AuthContext)
     const handleRegisterSubmit = e => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password)
+        if (password.length < 6) {
+            return Swal.fire({
+                title: 'Error!',
+                text: 'Password should be at least 6 characters',
+                icon: 'error',
+                confirmButtonText: 'ok'
+            })
+
+        } else if (!/^(?=.*[A-Z])(?=.*[a-z])(?=.*[@#$%^&+=!])(?=.*\d).{6,}$/.test(password)) {
+            return Swal.fire({
+                title: "Error!",
+                text: "Password must contain at least one uppercase letter, one lowercase letter, one digit, and be at least 6 characters long.",
+                icon: "error",
+                confirmButtonText: 'ok'
+            });
+        }
+        signUp(email, password)
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.error(error)
+                return Swal.fire({
+                    title: "Error!",
+                    text: error.message,
+                    icon: "error",
+                });
+            })
     }
     return (
         <>
@@ -32,12 +66,16 @@ const SignUp = () => {
                         <label className="label">
                             <span className="label-text font-bold"> Enter Your Password</span>
                         </label>
-                        <input type="password" name="password" placeholder="At least 6 characters" className="input input-bordered input-sm hover:input-success" required />
+                        <div className="flex  relative items-center">
+                            <input type={showPassword ? "text" : "password"} name="password" placeholder="password" className="input input-bordered w-full" required />
+                            <span onClick={() => setShowPassword(!showPassword)} className="absolute right-3">{showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}</span>
+                        </div>
+                        {/* <input type="password" name="password" placeholder="At least 6 characters" className="input input-bordered input-sm hover:input-success" required /> */}
                     </div>
 
 
                     <div className="form-control py-5 ">
-                        <input type="submit" value="Sign In" className="cursor-pointer input input-sm bg-yellow-400" />
+                        <input type="submit" value="Sign Up" className="cursor-pointer input input-sm bg-yellow-400" />
                     </div>
 
 

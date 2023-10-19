@@ -1,13 +1,25 @@
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
+import { useContext, useState } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
+    const { signIn } = useContext(AuthContext)
+    const [showPassword, setShowPassword] = useState(false);
     const handleLoginSubmit = e => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password)
+        signIn(email, password)
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.error(error)
+            })
     }
     return (
         <>
@@ -24,7 +36,11 @@ const Login = () => {
                         <label className="label">
                             <span className="label-text font-bold"> Enter Your Password</span>
                         </label>
-                        <input type="password" name="password" placeholder="Enter password" className="input input-bordered input-sm hover:input-success" required />
+                        <div className="flex  relative items-center">
+                            <input type={showPassword ? "text" : "password"} name="password" placeholder="password" className="input input-bordered w-full" required />
+                            <span onClick={() => setShowPassword(!showPassword)} className="absolute right-3">{showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}</span>
+                        </div>
+                        {/* <input type="password" name="password" placeholder="Enter password" className="input input-bordered input-sm hover:input-success" required /> */}
                     </div>
                     <p className="p-1 text-sm py-5 ">By continuing, you agree to <span className="cursor-pointer text-blue-800 hover:underline">Terms & Conditions of Use</span> and <span className="cursor-pointer text-blue-800 hover:underline">Privacy Notice</span>.</p>
 
