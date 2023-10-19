@@ -1,12 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import Swal from "sweetalert2";
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext)
+    const { signIn, googleSignIn } = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate()
+
+    //login with google
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                console.log(result.user)
+                Swal.fire({
+                    title: "Success!",
+                    text: 'Sign In Successfully',
+                    icon: "success",
+                });
+                navigate("/")
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
+    //login with email and password 
     const handleLoginSubmit = e => {
         e.preventDefault();
         const form = e.target;
@@ -16,6 +37,12 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 console.log(result.user)
+                Swal.fire({
+                    title: "Success!",
+                    text: 'Sign In Successfully',
+                    icon: "success",
+                });
+                navigate("/")
             })
             .catch(error => {
                 console.error(error)
@@ -37,7 +64,7 @@ const Login = () => {
                             <span className="label-text font-bold"> Enter Your Password</span>
                         </label>
                         <div className="flex  relative items-center">
-                            <input type={showPassword ? "text" : "password"} name="password" placeholder="password" className="input input-bordered w-full" required />
+                            <input type={showPassword ? "text" : "password"} name="password" placeholder="password" className="input input-bordered input-sm hover:input-success w-full" required />
                             <span onClick={() => setShowPassword(!showPassword)} className="absolute right-3">{showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}</span>
                         </div>
                         {/* <input type="password" name="password" placeholder="Enter password" className="input input-bordered input-sm hover:input-success" required /> */}
@@ -46,6 +73,9 @@ const Login = () => {
 
                     <div className="form-control pb-3 ">
                         <input type="submit" value="Sign In" className="cursor-pointer input input-sm bg-yellow-400" />
+                    </div>
+                    <div className="form-control py-3 ">
+                        <input onClick={handleGoogleSignIn} type="button" value="Sign In With Google" className="cursor-pointer input input-sm input-bordered" />
                     </div>
                     <p className="text-center">New to ame ?
                         <Link to="/signUp">
