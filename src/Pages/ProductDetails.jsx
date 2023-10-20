@@ -1,5 +1,4 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import Navbar from "../Header/Navbar";
 import Swal from "sweetalert2";
 import { BsBoxArrowUpRight, BsFillCartPlusFill } from 'react-icons/bs';
 import { BiFastForward } from 'react-icons/bi';

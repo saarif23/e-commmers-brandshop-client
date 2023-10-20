@@ -1,5 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom";
-import Navbar from "../Header/Navbar";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
@@ -40,25 +39,23 @@ const UpdateProduct = () => {
     }
     return (
         <div>
-       
-            <div className=" text-center min-h-screen bg-cover bg-center pb-16 " style={{ backgroundImage: 'url("https://i.ibb.co/YhwJcHf/11.png")' }}>
 
-                <Link to="/"><button className="p-5">Back To Home</button></Link>
-                <div className="bg-[#F4F3F0] max-w-5xl mx-auto py-8 rounded-md">
+            <div className=" text-center min-h-screen bg-cover bg-center pb-16 " style={{ backgroundImage: 'url("https://i.ibb.co/hCNJXM2/addproduct-bg.jpg")' }}>
+                <div className=" max-w-5xl mx-auto py-8 rounded-md">
                     <div className="max-w-2xl space-y-3 mx-auto">
                         <h3 className="text-3xl text-center text-[#374151] font-extrabold">Update Product</h3>
-                        <p>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
+                        <p>Product creation is an excellent time for optimizing your product title, description, and image alt tags for search engines. See our Guide to SEO for advice and tips to get started with SEO in BigCommerce.</p>
                     </div>
                     <form onSubmit={handleFromSubmit} className="px-10">
                         {/* From row with name and Brand name */}
-                        <div className="flex gap-5">
-                            <div className="form-control w-1/2">
+                        <div className="flex max-md:flex-col flex-row gap-5">
+                            <div className="form-control w-full lg:w-1/2">
                                 <label className="label">
                                     <span className="label-text  text-black">Name</span>
                                 </label>
                                 <input type="text" name="name" defaultValue={name} className="input input-bordered w-full" />
                             </div>
-                            <div className="form-control w-1/2">
+                            <div className="form-control w-full lg:w-1/2">
                                 <label className="label">
                                     <span className="label-text  text-black">Brand Name</span>
                                 </label>
@@ -66,14 +63,14 @@ const UpdateProduct = () => {
                             </div>
                         </div>
                         {/* From row with Type and Price */}
-                        <div className="flex gap-5">
-                            <div className="form-control w-1/2">
+                        <div className="flex max-md:flex-col flex-row gap-5">
+                            <div className="form-control w-full lg:w-1/2">
                                 <label className="label">
                                     <span className="label-text  text-black">Product Type</span>
                                 </label>
                                 <input type="text" name="type" defaultValue={type} className="input input-bordered w-full" />
                             </div>
-                            <div className="form-control w-1/2">
+                            <div className="form-control w-full lg:w-1/2">
                                 <label className="label">
                                     <span className="label-text  text-black">Price</span>
                                 </label>
@@ -81,14 +78,14 @@ const UpdateProduct = () => {
                             </div>
                         </div>
                         {/* From row with Rating and Image */}
-                        <div className="flex gap-5">
-                            <div className="form-control w-1/2">
+                        <div className="flex max-md:flex-col flex-row gap-5">
+                            <div className="form-control w-full lg:w-1/2">
                                 <label className="label">
                                     <span className="label-text  text-black">Rating</span>
                                 </label>
                                 <input type="text" name="rating" defaultValue={rating} className="input input-bordered w-full" />
                             </div>
-                            <div className="form-control w-1/2">
+                            <div className="form-control w-full lg:w-1/2">
                                 <label className="label">
                                     <span className="label-text  text-black">Product Image</span>
                                 </label>
@@ -109,7 +106,7 @@ const UpdateProduct = () => {
                         {/* From Submit button */}
                         <div className="">
                             <div className="form-control w-full my-5">
-                                <input type="submit" value="Update Product" className="input input-bordered w-full  bg-[#D2B48C] " />
+                                <input type="submit" value="Update Product" className="input w-full text-white  bg-lime-600 font-bold " />
                             </div>
 
                         </div>

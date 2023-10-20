@@ -1,10 +1,11 @@
 import { MdDeleteSweep } from 'react-icons/md';
 import Swal from 'sweetalert2';
+import PropTypes from 'prop-types'
 const ChooseItem = ({ item, myCartProduct, setMyCartProduct }) => {
 
-    const { _id, name, brandName, type, price, rating, image } = item;
+    const { _id, name, brandName, price, image } = item;
 
-     const handleDeleteToMyCart = (_id) => {
+    const handleDeleteToMyCart = (_id) => {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -52,5 +53,9 @@ const ChooseItem = ({ item, myCartProduct, setMyCartProduct }) => {
         </div>
     );
 };
-
+ChooseItem.propTypes = {
+    item: PropTypes.object.isRequired,
+    myCartProduct: PropTypes.array.isRequired,
+    setMyCartProduct: PropTypes.func
+}
 export default ChooseItem;

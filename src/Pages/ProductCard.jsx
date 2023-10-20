@@ -1,7 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 
 import Product from "../Components/Product";
-import { BsFillArrowRightCircleFill, BsCartXFill } from 'react-icons/bs';
+import { BsFillArrowRightCircleFill} from 'react-icons/bs';
 
 
 const ProductCard = () => {

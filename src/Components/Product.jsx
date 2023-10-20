@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaEye, FaPen } from 'react-icons/fa';
-import { MdDelete } from 'react-icons/md';
-
+import PropTypes from 'prop-types'
 const Product = ({ product }) => {
     const { _id, name, brandName, type, price, rating, image } = product;
     return (
@@ -17,16 +16,16 @@ const Product = ({ product }) => {
                     </div>
                     <p className="text-xl font-bold">${price}</p>
 
-                   <div className="flex gap-3">
-                   <div className="rating">
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                    <div className="flex gap-3">
+                        <div className="rating">
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                        </div>
+                        <p>{rating} (15 reviews)</p>
                     </div>
-                    <p>{rating} (15 reviews)</p>
-                   </div>
 
                     <div className='flex justify-between '>
                         <Link to={`/product/${_id}`}>
@@ -47,5 +46,8 @@ const Product = ({ product }) => {
         </div>
     );
 };
+Product.propTypes = {
+    product: PropTypes.object.isRequired
+}
 
 export default Product;

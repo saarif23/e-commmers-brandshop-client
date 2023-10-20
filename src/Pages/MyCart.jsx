@@ -1,5 +1,4 @@
 import { useLoaderData } from "react-router-dom";
-import Navbar from "../Header/Navbar";
 import ChooseItem from "../Components/ChooseItem";
 import { useState } from "react";
 
@@ -9,7 +8,7 @@ const MyCart = () => {
 
     return (
         <>
-                     {
+            {
                 myCartProduct?.map(item =>
                     <ChooseItem
                         key={item._id}

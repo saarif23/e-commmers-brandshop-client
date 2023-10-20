@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
-import Navbar from "../Header/Navbar";
+import { AiOutlineArrowLeft } from 'react-icons/ai';
 
 const AddProduct = () => {
 
@@ -40,14 +40,14 @@ const AddProduct = () => {
     }
     return (
         <div>
-           
-            <div className=" text-center min-h-screen bg-cover bg-center pb-16 " style={{ backgroundImage: 'url("https://i.ibb.co/YhwJcHf/11.png")' }}>
 
-                <Link to="/"><button className="p-5">Back To Home</button></Link>
-                <div className="bg-[#F4F3F0] max-w-5xl mx-auto py-8 rounded-md">
+            <div className=" text-center min-h-screen bg-cover bg-center pb-16 " style={{ backgroundImage: 'url("https://i.ibb.co/hCNJXM2/addproduct-bg.jpg")' }}>
+
+                <Link to="/"><button className="p-5 flex items-center mx-auto hover:text-sky-700 hover:underline"> <AiOutlineArrowLeft></AiOutlineArrowLeft>Back To Home</button></Link>
+                <div className="max-w-5xl mx-auto py-8 rounded-md">
                     <div className="max-w-2xl space-y-3 mx-auto">
                         <h3 className="text-3xl text-center text-[#374151] font-extrabold">Add New Product</h3>
-                        <p>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
+                        <p>Product creation is an excellent time for optimizing your product title, description, and image alt tags for search engines. See our Guide to SEO for advice and tips to get started with SEO in BigCommerce.</p>
                     </div>
                     <form onSubmit={handleFromSubmit} className="px-10">
                         {/* From row with name and Brand name */}
@@ -109,7 +109,7 @@ const AddProduct = () => {
                         {/* From Submit button */}
                         <div className="">
                             <div className="form-control w-full my-5">
-                                <input type="submit" value="Add Product" placeholder="Enter Category" className="input input-bordered w-full  bg-[#D2B48C] " />
+                                <input type="submit" value="Add Product" placeholder="Enter Category" className="input text-white  bg-lime-600 font-bold w-full " />
                             </div>
 
                         </div>
