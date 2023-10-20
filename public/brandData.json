@@ -1,32 +1,33 @@
 [
     {
-        "id":1,
+        "id": 1,
+        "brandName": "microsoft",
+        "brandImage": "https://i.ibb.co/bKXW934/microsoft-removebg-preview.png"
+    },
+    {
+        "id": 2,
+        "brandName": "oneplus",
+        "brandImage": "https://i.ibb.co/vPvQCD6/one-plus-removebg-preview.png"
+    },
+    {
+        "id": 3,
+        "brandName": "amazon",
+        "brandImage": "https://i.ibb.co/XyS6YnH/amazon-removebg-preview.png"
+        
+    },
+    {
+        "id": 4,
+        "brandName": "xaomi",
+        "brandImage": "https://i.ibb.co/r36Bjdt/xaomi-removebg-preview.png"
+    },
+    {
+        "id": 5,
         "brandName": "apple",
-        "brandImage": "https://i.ibb.co/9n4r3dC/dennis-brendel-qyg-EOi4-JS0-A-unsplash.jpg"
+        "brandImage": "https://i.ibb.co/RCkfscV/apple-removebg-preview.png"
     },
     {
-        "id":2,
-        "brandName": "walton",
-        "brandImage": "https://i.ibb.co/gmtbMm1/Walton.webp"
-    },
-    {
-        "id":3,
-        "brandName": "sony",
-        "brandImage": "https://i.ibb.co/X4LZSsG/triyansh-gill-G5-pn3x1o-HI-unsplash.jpg"
-    },
-    {
-        "id":4,
-        "brandName": "samsung",
-        "brandImage": "https://i.ibb.co/hM1hqzL/774-7744281-samsung-electronics-samsung-electronic-product-png.jpg"
-    },
-    {
-        "id":5,
-        "brandName": "google",
-        "brandImage": "https://i.ibb.co/LQV8zFq/pawel-czerwinski-fp-ZZEV0u-Qw-A-unsplash.jpg"
-    },
-    {
-        "id":6,
-        "brandName": "intel",
-        "brandImage": "https://i.ibb.co/kGnW085/slejven-djurakovic-0u-Xzo-Ez-YZ4-I-unsplash.jpg"
+        "id": 6,
+        "brandName": "lg",
+        "brandImage": "https://i.ibb.co/HtT6DNs/lg-removebg-preview.png"
     }
 ]

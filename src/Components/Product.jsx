@@ -5,28 +5,40 @@ import { MdDelete } from 'react-icons/md';
 const Product = ({ product }) => {
     const { _id, name, brandName, type, price, rating, image } = product;
     return (
-        <div className="flex p-3 items-center bg-[#F5F4F1] rounded-lg">
-            <img className="w-36" src={image} alt="coffee" />
-            <div className="flex-1 flex justify-between px-3 items-center">
-                <div className='text-xl'>
-                    <p>Name : {name}</p>
-                    <p>Type : {type}</p>
-                    <p>Price : ${price}</p>
-                    <p>rating : ${rating}</p>
-                </div>
-                <div className='text-white '>
-                    <Link to={`/product/${_id}`}>
-                        <p className=' bg-[#D2B48C] p-2 my-2  rounded-md'>
-                            <FaEye></FaEye>
-                        </p>
-                    </Link>
+        <div className="p-5 shadow-md bg-lime-50">
+            <img className="w-[300px] h-[400px]" src={image} alt="productImage" />
+            <div className=" p-3">
+                <div className='space-y-2'>
+                    <h3 className="text-xl font-bold"> {name}</h3>
+                    <div className="flex justify-between">
+                        <p>{type}</p>
+                        <p>Brand : {brandName}</p>
+                    </div>
+                    <p className="text-xl font-bold">${price}</p>
 
-                    <Link to={`/updateProduct/${_id}`}>
-                        <p className='bg-[#3C393B] p-2 my-2  rounded-md'><FaPen></FaPen></p>
-                    </Link>
-                    <p
-                        className='bg-[#EA4744] p-2  my-2 rounded-md cursor-pointer'><MdDelete></MdDelete></p>
+                    <div className="rating">
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                    </div>
+
+                    <div className='flex justify-between '>
+                        <Link to={`/product/${_id}`}>
+
+                            <div className="flex justify-center items-center gap-2 p-2 rounded-md bg-slate-100 hover:bg-slate-300 border">  <FaEye></FaEye> <span>View Details</span></div>
+
+                        </Link>
+
+                        <Link to={`/updateProduct/${_id}`}>
+                            <div className="flex justify-center items-center gap-2 p-2 rounded-md bg-slate-100 hover:bg-slate-300 border">  <FaPen></FaPen> <span>Update Product</span></div>
+                        </Link>
+
+                    </div>
+
                 </div>
+
             </div>
         </div>
     );

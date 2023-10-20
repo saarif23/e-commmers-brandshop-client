@@ -1,6 +1,10 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../Header/Navbar";
-
+import Swal from "sweetalert2";
+import { BsBoxArrowUpRight, BsFillCartPlusFill } from 'react-icons/bs';
+import { BiFastForward } from 'react-icons/bi';
+import { MdFavorite } from 'react-icons/md';
+import { SiIconfinder } from 'react-icons/si';
 const ProductDetails = () => {
     const { _id } = useParams();
     const products = useLoaderData();
@@ -18,34 +22,73 @@ const ProductDetails = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                Swal.fire({
+                    title: "Success!",
+                    text: 'Product Add To My Cart',
+                    icon: "success",
+                });
             })
     }
     return (<>
         <Navbar></Navbar>
-        <div className="grid grid-cols-3 gap-5 mx-10 ">
-
-            <div className=" p-5 col-span-2 space-y-5 ">
-                <img src={image} alt="" />
-                <p><span className="text-bold text-white">Product Details :</span> {details}</p>
-                {/* <p><span className="text-bold text-white">Job Description :</span> {job_responsibility}</p> */}
-                {/* <p><span className="text-bold text-white">Educational Requirements: <br /> </span> {educational_requirements}</p> */}
-                {/* <p><span className="text-bold text-white">Experiences : <br /> </span> {experiences}</p> */}
-
+        <div className="my-10 p-5 flex justify-between bg-gray-100 ">
+            <h3 className="text-4xl flex-1  font-medium">{name} </h3>
+            <div className="flex  items-center gap-10">
+                <p className=" font-semibold text-3xl">$ {price} </p>
+                <div onClick={handleAddToCart} className="flex justify-center items-center gap-2 p-2 text-white rounded-md bg-red-800 hover:bg-red-700 border cursor-pointer"> <BsFillCartPlusFill></BsFillCartPlusFill> <span>Add to cart</span></div>
             </div>
-            <div>
-                <div className=" p-5 space-y-3 bg-slate-700 rounded-lg ">
-                    <h3 className="text-xl text-white  font-semibold">Product Details </h3>
-                    <hr className="my-5" />
-                    <p className="text-white font-semibold"><span>Price: $</span> {price} </p>
-                    <p className="text-white font-semibold"><span>Title :</span> {name}</p>
 
-                    <h3 className="text-xl text-white  font-semibold pt-5">Additional Information </h3>
-                    <hr className="my-5" />
-                    <p className="text-white font-semibold"><span>Product Type :</span> {type}</p>
-                    <p className="text-white font-semibold"><span>Brand Name :</span> {brandName}</p>
-                    {/* <p><span className="text-white font-semibold">Address :</span> {contact_information.address}</p> */}
+        </div>
+
+        <div className="flex items-center gap-5 mx-10 ">
+
+            <div className=" flex-1 p-5 space-y-5 ">
+                <img src={image} alt="" />
+                <div>
+                    <p className="font-bold text-xl pb-3">Details Product </p>
+                    <p>{details}</p>
                 </div>
-                <button onClick={handleAddToCart} className="w-full btn btn-primary my-5">Add to Cart</button>
+            </div>
+            <div className="flex-1">
+                <div className=" p-5 space-y-5 ">
+                    <h3 className="text-4xl  font-medium">{name} </h3>
+                    <p> <span className="font-bold">Brand : </span>{brandName}</p>
+                    <p> <span className="font-bold">Type : </span>{type}</p>
+                    <div className="flex gap-5">
+                        <div className="rating">
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                        </div>
+                        <div className="flex gap-3">
+                            <p>{rating} (6)</p>
+                            <p className="text-red-700 cursor-pointer  hover:underline">Write a review</p>
+                        </div>
+                    </div>
+                    <div className="flex gap-5">
+                        <p className=" font-semibold text-3xl">$ {price} </p>
+                        <div className="border-l-2 pl-5">
+                            <p>4 interest-free payments of $87.49 with</p>
+                            <div className="flex gap-2 items-center">
+                                <p className="font-extrabold">Booking</p>
+                                <BsBoxArrowUpRight></BsBoxArrowUpRight>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-8 py-5">
+                        <span className="text-4xl"><BiFastForward></BiFastForward></span>
+                        <p><span className="text-green-500 font-semibold">In Stock </span>Free Shipping & Free 30-day Returns</p>
+                    </div>
+                    <div className="flex gap-20">
+                        <div onClick={handleAddToCart} className="flex justify-center items-center gap-2 p-2 rounded-md bg-slate-100 hover:bg-slate-300 border cursor-pointer"> <BsFillCartPlusFill></BsFillCartPlusFill> <span>Add to cart</span></div>
+                        <div className="flex justify-center items-center gap-2 p-2 rounded-md bg-slate-100 hover:bg-slate-300 border cursor-pointer"> <MdFavorite></MdFavorite> <span>Add to favorite</span></div>
+                    </div>
+                    <div className="flex justify-center items-center gap-2 p-2 rounded-md bg-slate-100 hover:bg-slate-300 border cursor-pointer"> <SiIconfinder></SiIconfinder> <span>FIND A RETAILER</span></div>
+
+                </div>
+
             </div>
 
         </div>

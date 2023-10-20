@@ -9,7 +9,8 @@ const Categories = () => {
             .then(data => setCategory(data))
     }, [])
     return (
-        <div className="text-center font-bold my-10 max-w-6xl mx-auto">
+       <div className="bg-stone-200 py-10">
+         <div className="text-center font-bold max-w-6xl mx-auto">
             <h3 className="text-4xl">Popular category</h3>
             <div className="grid grid-cols-3 gap-5 my-10">
                 {
@@ -17,6 +18,7 @@ const Categories = () => {
                 }
             </div>
         </div>
+       </div>
     );
 };
 

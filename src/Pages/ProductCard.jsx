@@ -9,7 +9,7 @@ const ProductCard = () => {
     return (
         <>
             <Navbar></Navbar>
-            <div className="grid grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div className="grid grid-cols-3 gap-8 max-w-6xl mx-auto py-10">
                 {
                     brandProducts.map(product => <Product key={product._id} product={product}></Product>)
                 }
