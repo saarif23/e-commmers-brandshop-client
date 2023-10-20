@@ -5,8 +5,9 @@ import { MdDelete } from 'react-icons/md';
 const Product = ({ product }) => {
     const { _id, name, brandName, type, price, rating, image } = product;
     return (
-        <div className="p-5 shadow-md bg-lime-50">
+        <div className="p-5 shadow-md bg-lime-50 max-lg:mx-5">
             <img className="w-[300px] h-[400px]" src={image} alt="productImage" />
+            <hr />
             <div className=" p-3">
                 <div className='space-y-2'>
                     <h3 className="text-xl font-bold"> {name}</h3>
@@ -16,13 +17,16 @@ const Product = ({ product }) => {
                     </div>
                     <p className="text-xl font-bold">${price}</p>
 
-                    <div className="rating">
+                   <div className="flex gap-3">
+                   <div className="rating">
                         <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                         <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
                         <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                         <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                         <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                     </div>
+                    <p>{rating} (15 reviews)</p>
+                   </div>
 
                     <div className='flex justify-between '>
                         <Link to={`/product/${_id}`}>

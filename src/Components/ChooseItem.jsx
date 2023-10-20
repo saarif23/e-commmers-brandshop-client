@@ -4,17 +4,6 @@ const ChooseItem = ({ item, myCartProduct, setMyCartProduct }) => {
 
     const { _id, name, brandName, type, price, rating, image } = item;
 
-    // const handleDeleteToMyCart = _id => {
-    //     console.log(_id)
-    //     fetch(`http://localhost:5000/mycart/${_id}`, {
-    //         method: "DELETE"
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data)
-                
-    //         })
-    // }
      const handleDeleteToMyCart = (_id) => {
         Swal.fire({
             title: 'Are you sure?',
@@ -49,10 +38,10 @@ const ChooseItem = ({ item, myCartProduct, setMyCartProduct }) => {
     }
 
     return (
-        <div className='flex justify-between max-w-4xl bg-gray-50 mx-auto border rounded-lg  my-5  p-5'>
-            <img className='w-36' src={image} alt="" />
+        <div className='flex max-md:flex-col flex-row max-md:justify-center justify-between max-w-4xl bg-gray-50 mx-auto border rounded-lg max-md:gap-5  my-5  p-5'>
+            <img className='w-36 mx-auto' src={image} alt="" />
 
-            <div className='text-left w-80 space-y-2'>
+            <div className='text-left max-md:text-center max-md:w-full w-80 space-y-2'>
                 <h3 className="text-2xl font-bold">{name}</h3>
                 <p>{brandName}</p>
                 <p className="text-2xl font-bold">${price}</p>
