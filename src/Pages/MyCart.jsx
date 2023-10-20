@@ -9,8 +9,7 @@ const MyCart = () => {
 
     return (
         <>
-            <Navbar></Navbar>
-            {
+                     {
                 myCartProduct?.map(item =>
                     <ChooseItem
                         key={item._id}

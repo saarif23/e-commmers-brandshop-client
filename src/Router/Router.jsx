@@ -9,11 +9,13 @@ import ProductCard from '../Pages/ProductCard';
 import ProductDetails from '../Pages/ProductDetails';
 import UpdateProduct from '../Pages/UpdateProduct';
 import PrivateRoute from './PrivateRoute';
+import ErrorPage from '../Pages/ErrorPage';
 
 const Router = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout></MainLayout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',

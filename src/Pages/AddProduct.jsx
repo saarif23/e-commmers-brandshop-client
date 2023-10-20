@@ -40,7 +40,7 @@ const AddProduct = () => {
     }
     return (
         <div>
-            <Navbar></Navbar>
+           
             <div className=" text-center min-h-screen bg-cover bg-center pb-16 " style={{ backgroundImage: 'url("https://i.ibb.co/YhwJcHf/11.png")' }}>
 
                 <Link to="/"><button className="p-5">Back To Home</button></Link>

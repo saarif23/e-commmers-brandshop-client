@@ -49,16 +49,16 @@ const ChooseItem = ({ item, myCartProduct, setMyCartProduct }) => {
     }
 
     return (
-        <div className='flex gap-20 max-w-4xl bg-gray-50 mx-auto border rounded-lg  my-5  p-5'>
+        <div className='flex justify-between max-w-4xl bg-gray-50 mx-auto border rounded-lg  my-5  p-5'>
             <img className='w-36' src={image} alt="" />
 
-            <div className='text-left space-y-2'>
+            <div className='text-left w-80 space-y-2'>
                 <h3 className="text-2xl font-bold">{name}</h3>
                 <p>{brandName}</p>
                 <p className="text-2xl font-bold">${price}</p>
             </div>
             <div>
-                <div onClick={() => handleDeleteToMyCart(_id)} className="flex justify-center items-center gap-2 p-2 rounded-md bg-slate-100 hover:bg-slate-300 border cursor-pointer"> <MdDeleteSweep></MdDeleteSweep> <span>ARemove from cart</span></div>
+                <div onClick={() => handleDeleteToMyCart(_id)} className="flex justify-center items-center gap-2 p-2 rounded-md bg-slate-200 text-red-600 hover:bg-slate-600 border cursor-pointer"> <MdDeleteSweep></MdDeleteSweep> <span>Remove from cart</span></div>
             </div>
         </div>
     );
