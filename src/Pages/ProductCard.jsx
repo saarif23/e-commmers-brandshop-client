@@ -1,7 +1,8 @@
 import { useLoaderData, useParams } from "react-router-dom";
 
 import Product from "../Components/Product";
-import { BsFillArrowRightCircleFill } from 'react-icons/bs';
+import { BsFillArrowRightCircleFill, BsCartXFill } from 'react-icons/bs';
+
 
 const ProductCard = () => {
     const { brandName } = useParams()
@@ -80,11 +81,24 @@ const ProductCard = () => {
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols-3 gap-8 max-w-6xl mx-auto py-10">
-                {
-                    brandProducts.map(product => <Product key={product._id} product={product}></Product>)
-                }
-            </div>
+            {
+                brandProducts.length > 0
+                    ?
+                    <div className="grid grid-cols-3 gap-8 max-w-6xl mx-auto py-10">
+                        {
+                            brandProducts.map(product => <Product key={product._id} product={product}></Product>)
+                        }
+                    </div>
+                    : <div className="flex justify-center items-center">
+                        <div>
+                            <img className="mx-auto" src="https://i.ibb.co/2yy85qR/images-4.png" alt="" />
+                            <div className="space-y-10 text-center">
+                                <h3 className="text-5xl text-center font-bold text-lime-800">Visit other categories. <br /> This categories no product available now</h3>
+                                <progress className="progress w-56"></progress>
+                            </div>
+                        </div>
+                    </div>
+            }
         </>
     );
 };
