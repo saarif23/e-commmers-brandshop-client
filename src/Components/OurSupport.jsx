@@ -5,8 +5,8 @@ const OurSupport = () => {
     return (
         <div className='max-w-6xl my-10 mx-auto '>
             <p className='text-center font-extrabold text-3xl  py-5'>Our Support and Facilities</p>
-            <div className='grid grid-cols-4 gap-5'>
-                <div className='flex items-center gap-5 bg-slate-200 p-5 rounded-md'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-lg:px-5'>
+                <div className='flex items-center gap-10 lg:gap-5 bg-slate-200 p-5 rounded-md'>
                     <div className='text-3xl'>
                         <GrDeliver></GrDeliver>
                     </div>
@@ -15,7 +15,7 @@ const OurSupport = () => {
                         <p>Orders from all item</p>
                     </div>
                 </div>
-                <div className='flex items-center gap-5 bg-slate-200 p-5 rounded-md'>
+                <div className='flex items-center gap-10 lg:gap-5 bg-slate-200 p-5 rounded-md'>
                     <div className='text-3xl'>
                         <BsCurrencyDollar></BsCurrencyDollar>
                     </div>
@@ -24,7 +24,7 @@ const OurSupport = () => {
                         <p>Money back guarantee</p>
                     </div>
                 </div>
-                <div className='flex items-center gap-5 bg-slate-200 p-5 rounded-md'>
+                <div className='flex items-center gap-10 lg:gap-5 bg-slate-200 p-5 rounded-md'>
                     <div className='text-3xl'>
                         <BsDisc></BsDisc>
                     </div>
@@ -33,7 +33,7 @@ const OurSupport = () => {
                         <p>Onevery order over $140.00</p>
                     </div>
                 </div>
-                <div className='flex items-center gap-5 bg-slate-200 p-5 rounded-md'>
+                <div className='flex items-center gap-10 lg:gap-5 bg-slate-200 p-5 rounded-md'>
                     <div className='text-3xl'>
                         <BiSupport></BiSupport>
                     </div>
