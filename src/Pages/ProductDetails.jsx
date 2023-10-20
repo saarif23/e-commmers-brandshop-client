@@ -30,7 +30,7 @@ const ProductDetails = () => {
             })
     }
     return (<>
-        <Navbar></Navbar>
+        
         <div className="my-10 p-5 flex justify-between bg-gray-100 ">
             <h3 className="text-4xl flex-1  font-medium">{name} </h3>
             <div className="flex  items-center gap-10">
