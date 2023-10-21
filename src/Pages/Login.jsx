@@ -62,7 +62,7 @@ const Login = () => {
                 <title>MAOXAL | Sign In</title>
             </Helmet>
             <Navbar></Navbar>
-            <div className="px-8 py-3 rounded-md m-10 border w-1/3 mx-auto">
+            <div className="px-8 py-3 rounded-md m-10 border  max-md:w-full max-md:mx-5 w-1/3 mx-auto">
                 <h3 className="text-3xl py-3 font-semibold">Sign In </h3>
                 <form onSubmit={handleLoginSubmit}>
                     <div className="form-control mb-2 ">

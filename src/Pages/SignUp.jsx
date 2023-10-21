@@ -5,6 +5,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Helmet } from "react-helmet-async";
+import Navbar from "../Header/Navbar";
 
 
 const SignUp = () => {
@@ -78,7 +79,8 @@ const SignUp = () => {
             <Helmet>
                 <title>MAOXAL | Register</title>
             </Helmet>
-            <div className="px-8 py-3 rounded-md m-10 border w-1/3 mx-auto">
+            <Navbar></Navbar>
+            <div className="px-8 py-3 rounded-md m-10 border max-md:w-full w-1/3 mx-auto">
                 <h3 className="text-3xl py-3 font-medium">Create Account </h3>
                 <form onSubmit={handleRegisterSubmit}>
                     <div className="form-control mb-2 ">

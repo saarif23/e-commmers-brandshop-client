@@ -56,7 +56,7 @@ const ProductDetails = () => {
 
                 <div className="flex py-10 max-lg:flex-col lg:flex-row items-center gap-5  ">
 
-                    <div className=" flex-1">
+                    <div className="flex-1 mx-5">
                         <img src={image} alt="" />
                         <p className="pt-10">{details}</p>
                     </div>
