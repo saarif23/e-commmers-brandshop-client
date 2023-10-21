@@ -1,9 +1,10 @@
 import ReactStarsRating from 'react-awesome-stars-rating';
+import PropTypes from 'prop-types'
 const SignleProduct = ({ product }) => {
-    const { name, image, price, rating, type, brandName } = product;
+    const { name, image, price, rating, brandName } = product;
     return (
-        <div>
-            <div className="flex h-full items-center gap-5  rounded-md border">
+        <div className='py-2'>
+            <div className="flex h-full items-center gap-5 py-2 rounded-md border">
                 <div className="w-1/3">
                     <img className="w-full " src={image} alt="Buds" />
                 </div>
@@ -11,7 +12,7 @@ const SignleProduct = ({ product }) => {
                     <h2 className="text-xl font-bold ">{name} </h2>
                     <p>{brandName}</p>
                     <p className="text-teal-500 font-bold">$ {price}</p>
-                    <div className='flex items-center'>
+                    <div className='flex items-center gap-3'>
                         <ReactStarsRating className="flex" value={rating} />
                         <p>{rating} (9)</p>
                     </div>
@@ -20,5 +21,7 @@ const SignleProduct = ({ product }) => {
         </div>
     );
 };
-
+SignleProduct.propTypes = {
+    product: PropTypes.object.isRequired
+}
 export default SignleProduct;
