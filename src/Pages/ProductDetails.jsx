@@ -4,6 +4,7 @@ import { BsBoxArrowUpRight, BsFillCartPlusFill } from 'react-icons/bs';
 import { BiFastForward } from 'react-icons/bi';
 import { MdFavorite } from 'react-icons/md';
 import { SiIconfinder } from 'react-icons/si';
+import ReactStarsRating from 'react-awesome-stars-rating';
 const ProductDetails = () => {
     const { _id } = useParams();
     const products = useLoaderData();
@@ -51,13 +52,7 @@ const ProductDetails = () => {
                         <p> <span className="font-bold">Brand : </span>{brandName}</p>
                         <p> <span className="font-bold">Type : </span>{type}</p>
                         <div className="flex gap-5">
-                            <div className="rating">
-                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
-                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                            </div>
+                            <ReactStarsRating className="flex" value={rating} />
                             <div className="flex gap-3">
                                 <p>{rating} (6)</p>
                                 <p className="text-red-700 cursor-pointer  hover:underline">Write a review</p>

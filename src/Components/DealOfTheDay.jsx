@@ -1,5 +1,6 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { FaEye } from 'react-icons/fa';
+
 const DealOfTheDay = () => {
     return (
         <div className="bg-sky-100 py-10">

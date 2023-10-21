@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { FaEye, FaPen } from 'react-icons/fa';
+import ReactStarsRating from 'react-awesome-stars-rating';
 import PropTypes from 'prop-types'
 const Product = ({ product }) => {
+
     const { _id, name, brandName, type, price, rating, image } = product;
     return (
         <div className="p-5 shadow-md bg-lime-50 max-lg:mx-5">
@@ -17,13 +19,7 @@ const Product = ({ product }) => {
                     <p className="text-xl font-bold">${price}</p>
 
                     <div className="flex gap-3">
-                        <div className="rating">
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                        </div>
+                        <ReactStarsRating className="flex" value={rating} />
                         <p>{rating} (15 reviews)</p>
                     </div>
 
