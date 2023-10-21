@@ -7,6 +7,7 @@ import { SiIconfinder } from 'react-icons/si';
 import ReactStarsRating from 'react-awesome-stars-rating';
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 const ProductDetails = () => {
     const { user } = useContext(AuthContext)
     const { email } = user;
@@ -21,7 +22,7 @@ const ProductDetails = () => {
     // console.log(addWithUser)
     const handleAddToCart = () => {
         const chooseOne = addWithUser;
-        fetch('http://localhost:5000/mycart', {
+        fetch('https://brand-shop-server-75ovir89b-arif-hossains-projects.vercel.app/mycart', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -41,6 +42,9 @@ const ProductDetails = () => {
     return (
         <>
             <div className="max-w-6xl mx-auto my-10">
+                <Helmet>
+                    <title>MAOXAL | Product Details</title>
+                </Helmet>
                 <div className=" p-5 lg:flex justify-between bg-gray-100 rounded-lg shadow-xl ">
                     <h3 className="max-md:text-2xl text-4xl flex-1  font-medium">{name} </h3>
                     <div className="flex justify-between items-center gap-10">
@@ -58,7 +62,7 @@ const ProductDetails = () => {
                     </div>
                     <div className="flex-1">
                         <div className=" mx-5 space-y-5 ">
-                            <h3 className="text-4xl  font-medium">{name} </h3>
+                            <h3 className="text-4xl font-Roboto  font-medium">{name} </h3>
                             <p> <span className="font-bold">Brand : </span>{brandName}</p>
                             <p> <span className="font-bold">Type : </span>{type}</p>
                             <div className="flex gap-5">

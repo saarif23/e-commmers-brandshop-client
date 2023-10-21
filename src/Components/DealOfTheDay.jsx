@@ -6,11 +6,11 @@ const DealOfTheDay = () => {
         <div className="bg-sky-100 py-10">
             <div className=' max-w-6xl mx-auto max-lg:px-5'>
                 <div className="flex max-md:flex-col flex-row justify-between max-md:gap-5 ">
-                    <h3 className="text-4xl text-center font-bold">Deal of The Day</h3>
+                    <h3 className="text-4xl text-center font-bold font-Roboto">Deal of The Day</h3>
                     <span className='flex justify-center items-center gap-3 bg-sky-400 px-5 py-2 rounded-md text-white '>View All Deals <AiOutlineArrowRight></AiOutlineArrowRight> </span>
                 </div>
                 {/* products */}
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 py-10'>
+                <div className='grid font-Playfair grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 py-10'>
                     <div className="p-5 rounded-lg shadow-md bg-lime-50">
                         <img className="w-[200px] h-[250px] mx-auto py-5" src="https://i.ibb.co/d7Ydddn/Phon.webp" alt="productImage" />
                         <hr />

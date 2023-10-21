@@ -1,6 +1,7 @@
 const Footer = () => {
     return (
-        <footer className="grid max-md:grid-cols-1 max-lg:grid-cols-3 max-lg:gap-10 lg:grid-cols-4  py-10 px-20 bg-indigo-950 text-white">
+      <div className=" bg-slate-300">
+          <footer className="grid max-w-6xl mx-auto max-md:grid-cols-1 max-lg:grid-cols-3 max-lg:gap-10 lg:grid-cols-4 gap-5 py-10 px-20 text-black">
             <div className="max-lg:col-span-3 max-md:col-span-1">
                 <img className="w-36 max-lg:mx-auto" src="https://i.ibb.co/c16k3jm/l-OGO-removebg-preview.png" alt="sunshine Wedding" />
                 <p className="max-lg:text-center">MAOXAL Technology & Electronics <br />Providing reliable business since 2019</p>
@@ -27,6 +28,7 @@ const Footer = () => {
                 <p className="link link-hover">Cookie policy</p>
             </div>
         </footer>
+      </div>
     );
 };
 

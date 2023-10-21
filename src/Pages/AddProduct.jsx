@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
 import { AiOutlineArrowLeft } from 'react-icons/ai';
+import { Helmet } from "react-helmet-async";
 
 const AddProduct = () => {
 
@@ -18,7 +19,7 @@ const AddProduct = () => {
         console.log(newProduct);
 
         // new product send to the server 
-        fetch('http://localhost:5000/products', {
+        fetch('https://brand-shop-server-75ovir89b-arif-hossains-projects.vercel.app/products', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -40,16 +41,18 @@ const AddProduct = () => {
     }
     return (
         <div>
-
+            <Helmet>
+                <title>MAOXAL | Add New Product</title>
+            </Helmet>
             <div className=" text-center min-h-screen bg-cover bg-center pb-16 " style={{ backgroundImage: 'url("https://i.ibb.co/hCNJXM2/addproduct-bg.jpg")' }}>
 
-                <Link to="/"><button className="p-5 flex items-center mx-auto hover:text-sky-700 hover:underline"> <AiOutlineArrowLeft></AiOutlineArrowLeft>Back To Home</button></Link>
+                <Link to="/"><button className="p-5 flex font-Playfair items-center mx-auto hover:text-sky-700 hover:underline"> <AiOutlineArrowLeft></AiOutlineArrowLeft>Back To Home</button></Link>
                 <div className="max-w-5xl mx-auto py-8 rounded-md">
                     <div className="max-w-2xl space-y-3 mx-auto">
-                        <h3 className="text-3xl text-center text-[#374151] font-extrabold">Add New Product</h3>
-                        <p>Product creation is an excellent time for optimizing your product title, description, and image alt tags for search engines. See our Guide to SEO for advice and tips to get started with SEO in BigCommerce.</p>
+                        <h3 className="text-3xl text-center font-Roboto text-[#374151] font-extrabold">Add New Product</h3>
+                        <p className="font-Playfair">Product creation is an excellent time for optimizing your product title, description, and image alt tags for search engines. See our Guide to SEO for advice and tips to get started with SEO in BigCommerce.</p>
                     </div>
-                    <form onSubmit={handleFromSubmit} className="px-10">
+                    <form onSubmit={handleFromSubmit} className="px-10 font-Playfair">
                         {/* From row with name and Brand name */}
                         <div className="flex max-md:flex-col flex-row gap-5">
                             <div className="form-control max-md:w-full w-1/2">

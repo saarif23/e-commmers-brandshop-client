@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Categories from "../Components/Categories";
 import DealOfTheDay from "../Components/DealOfTheDay";
 import OurSupport from "../Components/OurSupport";
@@ -8,7 +9,9 @@ import Header from "../Header/Header";
 const Home = () => {
     return (
         <>
-       
+            <Helmet>
+                <title>MAOXAL | Home </title>
+            </Helmet>
             <Header></Header>
             <Categories></Categories>
             <DealOfTheDay></DealOfTheDay>

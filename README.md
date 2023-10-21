@@ -1,14 +1,1 @@
-https://i.ibb.co/dB5Rn3L/walton-phon.jpg
-https://i.ibb.co/sR4brTx/samsung-phon.jpg
-https://i.ibb.co/y5k4mtp/intel-computer.jpg
-https://i.ibb.co/GJQsbGW/google-pixel-7-pro.jpg
-https://i.ibb.co/mNJ8qrj/laptop-google.jpg
-https://i.ibb.co/HgtYb2d/google-watch.jpg
-https://i.ibb.co/Cvt42tC/google-phon.jpg
-https://i.ibb.co/ZX6Y7JH/sony-phon.jpg
-https://i.ibb.co/ng3kLDc/sony-camera.jpg
-https://i.ibb.co/DDNypm1/sony-airpords.jpg
-https://i.ibb.co/vXbvQBh/apple-airpords.png
-https://i.ibb.co/Q83CkRc/ipad.jpg
-https://i.ibb.co/syb0j12/iphon.jpg
-https://i.ibb.co/xXGpn4y/apple-watch.jpg
+##  MAOXAL Technology and Electronics

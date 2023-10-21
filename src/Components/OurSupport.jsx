@@ -4,8 +4,8 @@ import { BiSupport } from 'react-icons/bi';
 const OurSupport = () => {
     return (
         <div className='max-w-6xl my-10 mx-auto '>
-            <p className='text-center font-extrabold text-3xl  py-5'>Our Support and Facilities</p>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-lg:px-5'>
+            <p className='text-center font-extrabold text-3xl font-Roboto py-5'>Our Support and Facilities</p>
+            <div className='grid grid-cols-1 font-Playfair md:grid-cols-2 lg:grid-cols-4 gap-5 max-lg:px-5'>
                 <div className='flex items-center gap-10 lg:gap-5 bg-slate-200 p-5 rounded-md'>
                     <div className='text-3xl'>
                         <GrDeliver></GrDeliver>

@@ -2,6 +2,7 @@ import { MdDeleteSweep } from 'react-icons/md';
 import Swal from 'sweetalert2';
 import PropTypes from 'prop-types'
 import ReactStarsRating from 'react-awesome-stars-rating';
+import { Helmet } from 'react-helmet-async';
 const ChooseItem = ({ item, myCartProduct, setMyCartProduct }) => {
 
     const { _id, name, brandName, price, image, rating } = item;
@@ -17,7 +18,7 @@ const ChooseItem = ({ item, myCartProduct, setMyCartProduct }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/mycart/${_id}`, {
+                fetch(`https://brand-shop-server-75ovir89b-arif-hossains-projects.vercel.app/mycart/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -40,13 +41,18 @@ const ChooseItem = ({ item, myCartProduct, setMyCartProduct }) => {
     }
 
     return (
-        <div className='flex max-md:flex-col items-center flex-row max-md:justify-center justify-between max-w-4xl bg-gray-50 mx-auto border rounded-lg max-md:gap-5  my-5  p-5'>
+        <div className='flex max-md:flex-col items-center flex-row max-md:justify-center 
+        justify-between max-w-4xl bg-gray-50 mx-auto border rounded-lg max-md:gap-5  my-5  p-5'>
+            <Helmet>
+                <title>MAOXAL | My Cart</title>
+            </Helmet>
             <img className='w-36 mx-auto' src={image} alt="" />
 
+
             <div className='text-left max-md:text-center max-md:w-full w-80 space-y-2'>
-                <h3 className="text-2xl font-bold">{name}</h3>
-                <p>Brand Name : {brandName}</p>
-                <p>Price : ${price}</p>
+                <h3 className="text-2xl font-Roboto font-bold">{name}</h3>
+                <p className='font-Playfair'>Brand Name : {brandName}</p>
+                <p className='font-Playfair'>Price : ${price}</p>
                 <div className="flex max-md:justify-center gap-3">
                     <ReactStarsRating className="flex" value={rating} />
                     <p>{rating} (15 reviews)</p>

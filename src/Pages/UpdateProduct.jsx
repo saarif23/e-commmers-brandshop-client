@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -18,7 +19,7 @@ const UpdateProduct = () => {
         const newProduct = { name, brandName, type, price, rating, image, details };
 
         // new product send to the server 
-        fetch(`http://localhost:5000/products/${_id}`, {
+        fetch(`https://brand-shop-server-75ovir89b-arif-hossains-projects.vercel.app/products/${_id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -39,14 +40,16 @@ const UpdateProduct = () => {
     }
     return (
         <div>
-
+            <Helmet>
+                <title>MAOXAL | Update Product</title>
+            </Helmet>
             <div className=" text-center min-h-screen bg-cover bg-center pb-16 " style={{ backgroundImage: 'url("https://i.ibb.co/hCNJXM2/addproduct-bg.jpg")' }}>
                 <div className=" max-w-5xl mx-auto py-8 rounded-md">
                     <div className="max-w-2xl space-y-3 mx-auto">
-                        <h3 className="text-3xl text-center text-[#374151] font-extrabold">Update Product</h3>
-                        <p>Product creation is an excellent time for optimizing your product title, description, and image alt tags for search engines. See our Guide to SEO for advice and tips to get started with SEO in BigCommerce.</p>
+                        <h3 className="text-3xl font-Roboto text-center text-[#374151] font-extrabold">Update Product</h3>
+                        <p className="font-Playfair">Product creation is an excellent time for optimizing your product title, description, and image alt tags for search engines. See our Guide to SEO for advice and tips to get started with SEO in BigCommerce.</p>
                     </div>
-                    <form onSubmit={handleFromSubmit} className="px-10">
+                    <form onSubmit={handleFromSubmit} className="px-10 font-Playfair">
                         {/* From row with name and Brand name */}
                         <div className="flex max-md:flex-col flex-row gap-5">
                             <div className="form-control w-full lg:w-1/2">

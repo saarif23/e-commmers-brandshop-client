@@ -1,7 +1,8 @@
 import { useLoaderData, useParams } from "react-router-dom";
 
 import Product from "../Components/Product";
-import { BsFillArrowRightCircleFill} from 'react-icons/bs';
+import { BsFillArrowRightCircleFill } from 'react-icons/bs';
+import { Helmet } from "react-helmet-async";
 
 
 const ProductCard = () => {
@@ -11,7 +12,9 @@ const ProductCard = () => {
 
     return (
         <>
-
+            <Helmet>
+                <title>MAOXAL | Product Card</title>
+            </Helmet>
             <div className="carousel w-full lg:h-screen md:h-[400px] h-[300px] ">
                 <div id="slide1" className="carousel-item relative w-full bg-slate-300" >
                     <div className="text-black bg-cover w-full flex justify-center items-center" style={{ backgroundImage: 'url("https://i.ibb.co/xzZfPpV/slider1.jpg")' }}>

@@ -30,22 +30,22 @@ const Router = createBrowserRouter([
             {
                 path: "/updateProduct/:id",
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+                loader: ({ params }) => fetch(`https://brand-shop-server-75ovir89b-arif-hossains-projects.vercel.app/products/${params.id}`)
             },
             {
                 path: "/myCart",
                 element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/mycart')
+                loader: () => fetch('https://brand-shop-server-75ovir89b-arif-hossains-projects.vercel.app/mycart')
             },
             {
                 path: '/category/:brandName',
                 element: <ProductCard></ProductCard>,
-                loader: () => fetch('http://localhost:5000/products')
+                loader: () => fetch('https://brand-shop-server-75ovir89b-arif-hossains-projects.vercel.app/products')
             },
             {
                 path: '/product/:_id',
                 element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/products'),
+                loader: () => fetch('https://brand-shop-server-75ovir89b-arif-hossains-projects.vercel.app/products'),
                 
             },
 
