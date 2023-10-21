@@ -46,15 +46,16 @@ const Navbar = () => {
                     {/* <Link to='/login'><button>Login</button></Link> */}
                     {
                         user ?
-                            <div className="dropdown dropdown-end">
-                                <label tabIndex={0} className="m-1">
-                                    <div ><img className="rounded-full w-12" src={user.photoURL} alt="userPhoto" /></div>
-                                </label>
-                                <ul tabIndex={0} className="dropdown-content z-[1] menu  shadow bg-base-100 rounded-box w-52 text-xl text-left text-black">
-                                    <li><button>{user.displayName}</button></li>
-                                    <li> <button onClick={handleLogout}>Logout</button> </li>
-                                </ul>
-                            </div>
+                            <>  <h4 className="mr-5 text-xl font-medium">{user.displayName}</h4>
+                                <div className="dropdown dropdown-end">
+                                    <label tabIndex={0} className="m-1">
+                                        <div ><img className="rounded-full w-12" src={user.photoURL} alt="userPhoto" /></div>
+                                    </label>
+                                    <ul tabIndex={0} className="dropdown-content z-[1] menu  shadow bg-base-100 rounded-box w-52 text-xl text-left text-black">
+
+                                        <li> <button onClick={handleLogout}>Logout</button> </li>
+                                    </ul>
+                                </div> </>
                             : <Link to="/login"><button className="btn btn-sm">Sign In</button></Link>
                     }
                 </div>

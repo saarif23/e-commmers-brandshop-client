@@ -6,7 +6,7 @@ const Product = ({ product }) => {
 
     const { _id, name, brandName, type, price, rating, image } = product;
     return (
-        <div className="p-5 shadow-md bg-lime-50 max-lg:mx-5">
+        <div className="p-5 rounded-lg shadow-md bg-lime-50 max-lg:mx-5">
             <img className="w-[300px] h-[400px]" src={image} alt="productImage" />
             <hr />
             <div className=" p-3">

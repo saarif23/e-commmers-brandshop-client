@@ -24,9 +24,9 @@ const SpecialOffer = () => {
             </div>
             <div className=" bg-gray-200 mt-10 py-16 rounded-xl flex flex-col lg:flex-row items-center justify-center gap-16 max-md:px-5 ">
                 <div className=" space-y-5 text-left max-w-sm max-lg:text-center text-black">
-                    <p className="max-md:text-base text-4xl font-bold">Get up to $190 toward a new Apple Watch.18</p>
-                    <h3 className="text-2xl">With Apple Trade In, just give us your eligible Apple Watch and get credit for a new one. It’s good for you and the planet.</h3>
-                    <p className='flex items-center gap-2 text-blue-600 font-bold'>Find our trade-in value <BsArrowBarRight></BsArrowBarRight> </p>
+                    <p className="max-md:text-2xl text-4xl font-bold">Get up to $190 toward a new Apple Watch.18</p>
+                    <h3 className="max-md:text-base text-2xl">With Apple Trade In, just give us your eligible Apple Watch and get credit for a new one. It’s good for you and the planet.</h3>
+                    <p className='flex max-lg:justify-center items-center gap-2 text-blue-600 font-bold'>Find our trade-in value <BsArrowBarRight></BsArrowBarRight> </p>
 
                 </div>
                 <div className="relative">

@@ -5,13 +5,22 @@ import { BiFastForward } from 'react-icons/bi';
 import { MdFavorite } from 'react-icons/md';
 import { SiIconfinder } from 'react-icons/si';
 import ReactStarsRating from 'react-awesome-stars-rating';
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 const ProductDetails = () => {
+    const { user } = useContext(AuthContext)
+    const { email } = user;
+    console.log(user.email)
     const { _id } = useParams();
     const products = useLoaderData();
     const productDetails = products.find(product => product._id === _id);
     const { name, brandName, type, price, rating, details, image } = productDetails;
+    const addWithUser = { name, brandName, rating, price, image, email }
+    console.log(addWithUser)
+    // const addWithUser = [productDetails, user.email]
+    // console.log(addWithUser)
     const handleAddToCart = () => {
-        const chooseOne = productDetails;
+        const chooseOne = addWithUser;
         fetch('http://localhost:5000/mycart', {
             method: "POST",
             headers: {
@@ -94,7 +103,7 @@ const ProductDetails = () => {
 
                 </ul>
             </div>
-           
+
         </>
     );
 };

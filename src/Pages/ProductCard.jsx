@@ -60,7 +60,7 @@ const ProductCard = () => {
                         <a href="#slide4" className="btn btn-sm btn-circle">❯</a>
                     </div>
                 </div>
-                <div id="slide4" className="carousel-item relative w-full">
+                <div id="slide4" className="carousel-item max-lg:hidden relative w-full">
                     <div className="text-black bg-cover w-full flex justify-end pr-44 items-center" style={{ backgroundImage: 'url("https://i.ibb.co/Qft6GVV/slider4.jpg")' }}>
                         <div className="text-left space-y-5">
                             <p className="text-3xl font-semibold" >XIAOMI 13 Ultra </p>

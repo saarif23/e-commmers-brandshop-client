@@ -1,9 +1,10 @@
 import { MdDeleteSweep } from 'react-icons/md';
 import Swal from 'sweetalert2';
 import PropTypes from 'prop-types'
+import ReactStarsRating from 'react-awesome-stars-rating';
 const ChooseItem = ({ item, myCartProduct, setMyCartProduct }) => {
 
-    const { _id, name, brandName, price, image } = item;
+    const { _id, name, brandName, price, image, rating } = item;
 
     const handleDeleteToMyCart = (_id) => {
         Swal.fire({
@@ -39,16 +40,20 @@ const ChooseItem = ({ item, myCartProduct, setMyCartProduct }) => {
     }
 
     return (
-        <div className='flex max-md:flex-col flex-row max-md:justify-center justify-between max-w-4xl bg-gray-50 mx-auto border rounded-lg max-md:gap-5  my-5  p-5'>
+        <div className='flex max-md:flex-col items-center flex-row max-md:justify-center justify-between max-w-4xl bg-gray-50 mx-auto border rounded-lg max-md:gap-5  my-5  p-5'>
             <img className='w-36 mx-auto' src={image} alt="" />
 
             <div className='text-left max-md:text-center max-md:w-full w-80 space-y-2'>
                 <h3 className="text-2xl font-bold">{name}</h3>
-                <p>{brandName}</p>
-                <p className="text-2xl font-bold">${price}</p>
+                <p>Brand Name : {brandName}</p>
+                <p>Price : ${price}</p>
+                <div className="flex max-md:justify-center gap-3">
+                    <ReactStarsRating className="flex" value={rating} />
+                    <p>{rating} (15 reviews)</p>
+                </div>
             </div>
             <div>
-                <div onClick={() => handleDeleteToMyCart(_id)} className="flex justify-center items-center gap-2 p-2 rounded-md bg-slate-200 text-red-600 hover:bg-slate-600 border cursor-pointer"> <MdDeleteSweep></MdDeleteSweep> <span>Remove from cart</span></div>
+                <div onClick={() => handleDeleteToMyCart(_id)} className="flex justify-center items-center gap-2 p-2 font-medium text-xl rounded-md bg-slate-200 text-red-600 hover:bg-red-600 hover:text-white border cursor-pointer"> <MdDeleteSweep></MdDeleteSweep> <span>Remove from cart</span></div>
             </div>
         </div>
     );

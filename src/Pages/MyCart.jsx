@@ -1,15 +1,21 @@
 import { useLoaderData } from "react-router-dom";
 import ChooseItem from "../Components/ChooseItem";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const MyCart = () => {
+    const { user } = useContext(AuthContext);
     const chooseProduct = useLoaderData();
+    // console.log(chooseProduct);
     const [myCartProduct, setMyCartProduct] = useState(chooseProduct);
+    const userWithEmail = myCartProduct.filter(item => item.email === user.email)
+
 
     return (
-        <>
+        <div className="min-h-screen">
+
             {
-                myCartProduct?.map(item =>
+                userWithEmail?.map(item =>
                     <ChooseItem
                         key={item._id}
                         item={item}
@@ -18,8 +24,9 @@ const MyCart = () => {
                     > </ChooseItem>)
             }
 
+        </div>
 
-        </>
+
     );
 };
 
