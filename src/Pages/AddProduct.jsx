@@ -59,13 +59,13 @@ const AddProduct = () => {
                                 <label className="label">
                                     <span className="label-text  text-black">Name</span>
                                 </label>
-                                <input type="text" name="name" placeholder="Enter Product Name" className="input input-bordered w-full" />
+                                <input type="text" name="name" required placeholder="Enter Product Name" className="input input-bordered w-full" />
                             </div>
                             <div className="form-control max-md:w-full w-1/2">
                                 <label className="label">
                                     <span className="label-text  text-black">Brand Name</span>
                                 </label>
-                                <input type="text" name="brandName" placeholder="Enter Brand Name " className="input input-bordered w-full" />
+                                <input type="text" name="brandName" required placeholder="Enter Brand Name " className="input input-bordered w-full" />
                             </div>
                         </div>
                         {/* From row with Type and Price */}
@@ -74,26 +74,26 @@ const AddProduct = () => {
                                 <label className="label">
                                     <span className="label-text  text-black">Product Type</span>
                                 </label>
-                                <input type="text" name="type" placeholder="Enter Product Type" className="input input-bordered w-full" />
+                                <input type="text" name="type" required placeholder="Enter Product Type" className="input input-bordered w-full" />
                             </div>
                             <div className="form-control max-md:w-full w-1/2">
                                 <label className="label">
                                     <span className="label-text  text-black">Price</span>
                                 </label>
-                                <input type="text" name="price" placeholder="Enter Product Price " className="input input-bordered w-full" />
+                                <input type="text" name="price" required placeholder="Enter Product Price " className="input input-bordered w-full" />
                             </div>
                         </div>
                         {/* From row with Rating and Image */}
                         <div className="flex max-md:flex-col flex-row gap-5">
                             <div className="form-control max-md:w-full w-1/2">
                                 <label className="label">
-                                    <span className="label-text  text-black">Rating</span>
+                                    <span className="label-text required text-black">Rating</span>
                                 </label>
                                 <input type="text" name="rating" placeholder="Rating" className="input input-bordered w-full" />
                             </div>
                             <div className="form-control max-md:w-full w-1/2">
                                 <label className="label">
-                                    <span className="label-text  text-black">Product Image</span>
+                                    <span className="label-text required text-black">Product Image</span>
                                 </label>
                                 <input type="text" name="image" placeholder="Enter Product URL" className="input input-bordered w-full" />
                             </div>
