@@ -1,7 +1,10 @@
-##  MAOXAL Technology and Electronics
+#  MAOXAL Technology and Electronics
 
-# Server Site live link 
- https://brand-shop-server-75ovir89b-arif-hossains-projects.vercel.app/
+## Live Link 
+https://653400a257ebb9455c9f6ebb--leafy-puffpuff-46165b.netlify.app
+
+## Server Side Code link 
+ https://github.com/saarif23/e-commmers-brandshop-sever
 
 
 #  project features
@@ -17,3 +20,35 @@
 - added 404 error page 
 - added google fonts 
 - server side deploy in vercel 
+
+
+
+
+  # Used packages and technology
+
+  ## Used packages
+  - Tailwind CSS
+  - Daisyui
+  - Firebase 
+  - React Icons
+  - React Select
+  - React-awesome-stars-rating
+  - React-router-dom
+  - React-helmet-async
+  - Sweetalert2
+  - Prop-types
+
+
+
+  # Used Technology
+  ## Front-end
+  - HTML
+  - Tailwind CSS
+  - Daisyui
+  - Java Script
+  - React Js
+
+  ## Back-end
+  - Node Js
+  - Express Js
+  - Mongodb
