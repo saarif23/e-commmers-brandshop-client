@@ -8,6 +8,7 @@ import ReactStarsRating from 'react-awesome-stars-rating';
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import Container from "../Components/Container";
 const ProductDetails = () => {
     const { user } = useContext(AuthContext)
     const { email } = user;
@@ -41,15 +42,18 @@ const ProductDetails = () => {
     }
     return (
         <>
-            <div className="max-w-6xl mx-auto my-10">
+            <Container>
                 <Helmet>
                     <title>MAOXAL | Product Details</title>
                 </Helmet>
-                <div className=" p-5 lg:flex justify-between bg-gray-100 rounded-lg shadow-xl ">
+                <div className="pb-28">
+
+                </div>
+                <div className=" p-5 lg:flex justify-between bg-gray-800  rounded-lg shadow-xl ">
                     <h3 className="max-md:text-2xl text-4xl flex-1  font-medium">{name} </h3>
                     <div className="flex justify-between items-center gap-10">
                         <p className="max-md:text-2xl font-semibold text-3xl">${price} </p>
-                        <div onClick={handleAddToCart} className="flex justify-center items-center gap-2 p-2 text-white rounded-md bg-red-800 hover:bg-red-700 border cursor-pointer"> <BsFillCartPlusFill></BsFillCartPlusFill> <span>Add to cart</span></div>
+                        <div onClick={handleAddToCart} className="flex justify-center items-center gap-2 p-2 text-white rounded-md bg-[#176B87] hover:bg-red-700  cursor-pointer"> <BsFillCartPlusFill></BsFillCartPlusFill> <span>Add to cart</span></div>
                     </div>
 
                 </div>
@@ -69,7 +73,7 @@ const ProductDetails = () => {
                                 <ReactStarsRating className="flex" value={rating} />
                                 <div className="flex gap-3">
                                     <p>{rating} (6)</p>
-                                    <p className="text-red-700 cursor-pointer  hover:underline">Write a review</p>
+                                    <p className="text-[#176B87] cursor-pointer  hover:underline">Write a review</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-5">
@@ -87,10 +91,10 @@ const ProductDetails = () => {
                                 <p><span className="text-green-500 font-semibold">In Stock </span>Free Shipping & Free 30-day Returns</p>
                             </div>
                             <div className="flex gap-20">
-                                <div onClick={handleAddToCart} className="flex justify-center items-center gap-2 p-2 rounded-md bg-slate-100 hover:bg-slate-300 border cursor-pointer"> <BsFillCartPlusFill></BsFillCartPlusFill> <span>Add to cart</span></div>
-                                <div className="flex justify-center items-center gap-2 p-2 rounded-md bg-slate-100 hover:bg-slate-300 border cursor-pointer"> <MdFavorite></MdFavorite> <span>Add to favorite</span></div>
+                                <div onClick={handleAddToCart} className="flex justify-center items-center gap-2 p-2 rounded-md border hover:bg-gray-950 cursor-pointer"> <BsFillCartPlusFill></BsFillCartPlusFill> <span>Add to cart</span></div>
+                                <div className="flex justify-center items-center gap-2 p-2 rounded-md  hover:bg-gray-950 border cursor-pointer"> <MdFavorite></MdFavorite> <span>Add to favorite</span></div>
                             </div>
-                            <div className="flex justify-center items-center gap-2 p-2 rounded-md bg-slate-100 hover:bg-slate-300 border cursor-pointer"> <SiIconfinder></SiIconfinder> <span>FIND A RETAILER</span></div>
+                            <div className="flex justify-center items-center gap-2 p-2 rounded-md bg-[#176B87] cursor-pointer"> <SiIconfinder></SiIconfinder> <span>FIND A RETAILER</span></div>
 
                         </div>
 
@@ -106,7 +110,7 @@ const ProductDetails = () => {
                     <li><Link>All Specs</Link></li>
 
                 </ul>
-            </div>
+            </Container>
 
         </>
     );

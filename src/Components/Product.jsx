@@ -6,7 +6,7 @@ const Product = ({ product }) => {
 
     const { _id, name, brandName, type, price, rating, image } = product;
     return (
-        <div className="p-5 rounded-lg shadow-md bg-lime-50 max-lg:mx-5">
+        <div className="p-5 rounded-lg shadow-md bg-gray-800 max-lg:mx-5">
             <img className="w-[300px] h-[400px]" src={image} alt="productImage" />
             <hr />
             <div className=" p-3">
@@ -26,12 +26,12 @@ const Product = ({ product }) => {
                     <div className='flex justify-between '>
                         <Link to={`/product/${_id}`}>
 
-                            <div className="flex justify-center items-center gap-2 p-2 rounded-md bg-slate-100 hover:bg-slate-300 border">  <FaEye></FaEye> <span>View Details</span></div>
+                            <div className="flex justify-center items-center gap-2 p-2 rounded-md  hover:bg-gray-900 border">  <FaEye></FaEye> <span>View Details</span></div>
 
                         </Link>
 
                         <Link to={`/updateProduct/${_id}`}>
-                            <div className="flex justify-center items-center gap-2 p-2 rounded-md bg-slate-100 hover:bg-slate-300 border">  <FaPen></FaPen> <span>Update Product</span></div>
+                            <div className="flex justify-center items-center gap-2 p-2 rounded-md  hover:bg-gray-900 border">  <FaPen></FaPen> <span>Update Product</span></div>
                         </Link>
 
                     </div>

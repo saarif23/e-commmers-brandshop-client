@@ -1,11 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
-import Footer from "../Footer/Footer";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Helmet } from "react-helmet-async";
-import Navbar from "../Header/Navbar";
+
 
 
 const SignUp = () => {
@@ -75,35 +74,35 @@ const SignUp = () => {
             })
     }
     return (
-        <>
+        <div className="min-h-screen ">
             <Helmet>
                 <title>MAOXAL | Register</title>
             </Helmet>
-            <Navbar></Navbar>
-            <div className="px-8 py-3 rounded-md m-10 border max-md:w-full w-1/3 mx-auto">
-                <h3 className="text-3xl py-3 font-medium">Create Account </h3>
+        
+            <div className="px-8 py-3 rounded-md  border max-md:w-full w-1/3 mx-auto">
+                <h3 className="text-4xl font-Roboto font-bold border-l-8 border-[#176B87] p-2 text-[#176B87] ">Create Account </h3>
                 <form onSubmit={handleRegisterSubmit}>
                     <div className="form-control mb-2 ">
-                        <label className="label font-bold">
-                            <span className="label-text"> Your Name</span>
+                        <label className="label">
+                            <span className="label-text text-white"> Your Name</span>
                         </label>
                         <input type="text" name="name" placeholder="Enter First and Last Name" className="input input-bordered input-sm hover:input-success" required />
                     </div>
                     <div className="form-control mb-2 ">
-                        <label className="label font-bold">
-                            <span className="label-text"> Your Photo</span>
+                        <label className="label">
+                            <span className="label-text text-white"> Your Photo</span>
                         </label>
                         <input type="text" name="photoUrl" placeholder="Enter Photo URL" className="input input-bordered input-sm hover:input-success" required />
                     </div>
                     <div className="form-control mb-2 ">
-                        <label className="label font-bold">
-                            <span className="label-text"> Email or Mobile Phone Number</span>
+                        <label className="label">
+                            <span className="label-text text-white"> Email or Mobile Phone Number</span>
                         </label>
                         <input type="email" name="email" placeholder="abcd123@gmail.com" className="input input-bordered input-sm hover:input-success" required />
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text font-bold"> Enter Your Password</span>
+                            <span className="label-text text-white font-bold"> Enter Your Password</span>
                         </label>
                         <div className="flex  relative items-center">
                             <input type={showPassword ? "text" : "password"} name="password" placeholder="password" className="input input-bordered input-sm hover:input-success w-full" required />
@@ -114,7 +113,7 @@ const SignUp = () => {
 
 
                     <div className="form-control py-5 ">
-                        <input type="submit" value="Sign Up" className="cursor-pointer input input-sm bg-yellow-400" />
+                        <input type="submit" value="Sign Up" className="cursor-pointer py-2 rounded-md bg-[#176B87]" />
                     </div>
 
 
@@ -132,9 +131,7 @@ const SignUp = () => {
 
             </div>
 
-
-            <Footer></Footer>
-        </>
+        </div>
     );
 };
 

@@ -5,7 +5,7 @@ const Category = ({ category }) => {
     return (
         <div className="w-[150px] h-[150px] font-Playfair">
             <Link to={`/category/${brandName}`}>
-                <img className="w-full h-full rounded-full bg-sky-200 mx-auto p-10" src={brandImage} alt="" />
+                <img className="w-full h-full rounded-full bg-white/90 mx-auto p-10" src={brandImage} alt="" />
                 <h3 className=" text-2xl font-bold py-2">{brandName}</h3>
             </Link>
         </div>
