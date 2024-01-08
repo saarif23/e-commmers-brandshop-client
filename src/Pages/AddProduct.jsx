@@ -50,13 +50,7 @@ const AddProduct = () => {
         className=" text-center min-h-screen bg-cover bg-center pb-16 "
         style={{ backgroundImage: `url(${img})` }}
       >
-        <Link to="/">
-          <button className="p-5 flex font-Playfair items-center mx-auto hover:text-sky-700 hover:underline">
-            {" "}
-            <AiOutlineArrowLeft></AiOutlineArrowLeft>Back To Home
-          </button>
-        </Link>
-
+        <div className="p-10 flex font-Playfair items-center mx-auto hover:text-sky-700 hover:underline"></div>
 
         <div className="max-w-5xl mx-auto  rounded-md py-5 bg-black bg-blend-overlay bg-opacity-50 mt-10 ">
           <div className="max-w-2xl space-y-3 mx-auto">
@@ -82,7 +76,7 @@ const AddProduct = () => {
                   name="name"
                   required
                   placeholder="Enter Product Name"
-                  className="input input-bordered w-full"
+                  className="input input-bordered border-white focus:border-blue-500 bg-black/10 w-full"
                 />
               </div>
               <div className="form-control max-md:w-full w-1/2">
@@ -94,7 +88,7 @@ const AddProduct = () => {
                   name="brandName"
                   required
                   placeholder="Enter Brand Name "
-                  className="input input-bordered w-full"
+                  className="input input-bordered border-white focus:border-blue-500 bg-black/10 w-full"
                 />
               </div>
             </div>
@@ -109,7 +103,7 @@ const AddProduct = () => {
                   name="type"
                   required
                   placeholder="Enter Product Type"
-                  className="input input-bordered w-full"
+                  className="input input-bordered border-white focus:border-blue-500 bg-black/10 w-full"
                 />
               </div>
               <div className="form-control max-md:w-full w-1/2">
@@ -121,7 +115,7 @@ const AddProduct = () => {
                   name="price"
                   required
                   placeholder="Enter Product Price "
-                  className="input input-bordered w-full"
+                  className="input input-bordered border-white focus:border-blue-500 bg-black/10 w-full"
                 />
               </div>
             </div>
@@ -136,7 +130,7 @@ const AddProduct = () => {
                   name="rating"
                   required
                   placeholder="Rating"
-                  className="input input-bordered w-full"
+                  className="input input-bordered border-white focus:border-blue-500 bg-black/10 w-full"
                 />
               </div>
               <div className="form-control max-md:w-full w-1/2">
@@ -148,7 +142,7 @@ const AddProduct = () => {
                   name="image"
                   required
                   placeholder="Enter Product URL"
-                  className="input input-bordered w-full"
+                  className="input input-bordered border-white focus:border-blue-500 bg-black/10 w-full"
                 />
               </div>
             </div>
@@ -166,7 +160,7 @@ const AddProduct = () => {
                   name="details"
                   required
                   placeholder="Enter Product Description"
-                  className="input input-bordered w-full"
+                  className="input input-bordered border-white focus:border-blue-500 bg-black/10 w-full"
                 />
               </div>
             </div>
