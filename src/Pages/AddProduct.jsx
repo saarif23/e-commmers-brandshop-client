@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import { AiOutlineArrowLeft } from "react-icons/ai";
 import { Helmet } from "react-helmet-async";
 import img from "../assets/banner2.jpg";
 
@@ -155,12 +153,12 @@ const AddProduct = () => {
                     Short Description
                   </span>
                 </label>
-                <input
+                <textarea
                   type="text"
                   name="details"
                   required
                   placeholder="Enter Product Description"
-                  className="input input-bordered border-white focus:border-blue-500 bg-black/10 w-full"
+                  className="textarea textarea-bordered border-white focus:border-blue-500 bg-black/10 w-full"
                 />
               </div>
             </div>
