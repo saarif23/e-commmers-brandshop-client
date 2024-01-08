@@ -60,30 +60,38 @@ const Login = () => {
       </Helmet>
 
       <div className="px-8 rounded-md py-5  border  max-md:w-full max-md:mx-5 w-1/3 mx-auto ">
-        <h3 className="text-4xl font-Roboto font-bold border-l-8 border-[#176B87] p-2 text-[#176B87] mb-5">Sign In </h3>
+        <h3 className="text-4xl font-Roboto font-bold border-l-8 border-[#176B87] p-2 text-[#176B87] mb-5">
+          Sign In{" "}
+        </h3>
         <form onSubmit={handleLoginSubmit}>
           <div className="form-control mb-2 ">
             <label className="label font-bold">
-              <span className="label-text text-white"> Email or Mobile Phone Number</span>
+              <span className="label-text text-white">
+                {" "}
+                Email or Mobile Phone Number
+              </span>
             </label>
             <input
               type="email"
               name="email"
               placeholder="abcd123@gmail.com"
-              className="input input-bordered input-sm hover:input-success"
+              className="input input-bordered bg-black/10 border-white focus:border-blue-500"
               required
             />
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-white font-bold"> Enter Your Password</span>
+              <span className="label-text text-white font-bold">
+                {" "}
+                Enter Your Password
+              </span>
             </label>
             <div className="flex  relative items-center">
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
                 placeholder="******"
-                className="input input-bordered input-sm hover:input-success w-full"
+                className="input input-bordered bg-black/10 border-white focus:border-blue-500 w-full"
                 required
               />
               <span
@@ -126,7 +134,6 @@ const Login = () => {
             New to ame ?
             <Link to="/signUp">
               <span className="text-blue-800 underline ">
-               
                 create an account
               </span>
             </Link>
