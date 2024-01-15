@@ -8,11 +8,11 @@ const Header = () => {
       style={{ backgroundImage: `url(${bannerImg})` }}
     >
       <Container>
-        <div className="flex justify-between items-center pt-20">
+        <div className="flex flex-col-reverse lg:flex-row justify-between items-center pt-20 max-md:gap-10">
           <div className=" space-y-5 flex-1">
-            <h3 className="text-5xl font-Roboto font-extrabold">
+            <h3 className="text-3xl md:text-5xl font-Roboto font-extrabold">
               Lamicall Cell Phone Stand{" "}
-              <span className="text-[#176B87] text-6xl"> $9.99 </span>
+              <span className="text-[#176B87] text-5xl md:text-6xl"> $9.99 </span>
               for <span className="text-[#176B87]">this month </span>
             </h3>
             <p className="font-Playfair pb-5">
